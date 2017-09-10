@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import NavBar from '../components/NavBar';
 import logo from '../logo.svg';
 import './IndexPage.less';
+import ReactS3Uploader from 'react-s3-uploader';
+import Input from '../components/Input';
+import styles from './IndexPage.less';
 
 class IndexPage extends Component {
     constructor(props) {
@@ -19,18 +22,16 @@ class IndexPage extends Component {
         }));
     }
 
-    
-
     render() {
         return (
             <div>
-                <div className="App">
+                <div className={styles.App}>
                     <NavBar />
-                    <div className="App-header fixedTop">
-                        <p className="App-intro">
+                    <div className={'{styles.App-header} fixedTop'}>
+                        <p className={'{styles.App-intro}'}>
                             This page needs to:
-                      <br /><code>Iniate Chats</code>
-                            <br /><code>Event Object (location, equipment)</code>
+                        <code className={`{styles.codeStyleLineBreaks}`}>Iniate Chats</code>
+                            <code className={`{styles.codeStyleLineBreaks}`}>Event Object (location, equipment)</code>
                             <br /><code>Event Object Lists</code>
                             <br /><code>Chef Object (Name, location, equipment)</code>
                             <br /><code>Chef Object lists</code>
@@ -40,6 +41,8 @@ class IndexPage extends Component {
                         <button onClick={this.handleClick}>
                             {this.state.isToggleOn ? 'ON' : 'OFF'}
                         </button>
+                        <ReactS3Uploader />
+                        <Input />
                     </div>
                 </div>
             </div>
