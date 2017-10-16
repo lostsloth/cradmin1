@@ -1,4 +1,6 @@
-import { combineReducers } from 'redux'
-import { mapActionPayloadToState } from '../utils/reducerUtils'
-import * as actions from '../actions'
-import booleanReducer from '../utils/booleanReducer'
+function events(state = [], action) {
+  console.log(state, action);
+  return state;
+}
+
+export default events;

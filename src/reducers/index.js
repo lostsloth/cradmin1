@@ -1,11 +1,12 @@
-import { routerReducer as routing } from 'react-router-redux';
 import { combineReducers } from 'redux';
+import { routerReducer } from 'react-router-redux';
 import events from './events';
-import chefs from './chefs';
+import chats from './chats';
 
 const rootReducer = combineReducers({
-    events,
-    chefs,
+  events,
+  chats,
+  routing: routerReducer,
 });
 
 export default rootReducer;
